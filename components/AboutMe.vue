@@ -33,7 +33,7 @@ const fields = entry.fields
   align-items: center;
   flex-wrap: wrap;
   width: 80vw;
-  margin: 0.75em auto;
+  margin: 3em auto;
 
   &__image {
     display: flex;

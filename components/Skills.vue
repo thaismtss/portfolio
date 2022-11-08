@@ -2,13 +2,13 @@
   <div class="work">
     <div class="work__container">
       <div class="work__container__skills">
-        <h1>Skills &lt; &frasl; &gt;</h1>
+        <h1 class="work__container__title">Skills &lt; &frasl; &gt;</h1>
         <div class="work__container__skills__icons">
           <Icon v-for="(icon, i) in items" :key="i" :icon="icon.fields.icon" />
         </div>
       </div>
       <div>
-        <h1>Experiência</h1>
+        <h1 class="work__container__title">Experiência</h1>
         <div class="work__container__experience">
           <WorkExperience />
           <WorkExperience />
@@ -56,6 +56,10 @@ const items = data.value.items
         flex-wrap: wrap;
         margin: 0 auto;
       }
+    }
+
+    &__title {
+      margin: 2em 0;
     }
 
     &__experience {
