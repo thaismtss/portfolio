@@ -1,14 +1,18 @@
 <template>
+  <div>
+    <Header />
+    <AboutMe />
+    <Skills />
+  </div>
 </template>
 
-<script lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss">
- html, body {
+html,
+body {
   padding: 0;
   margin: 0;
   box-shadow: none;
- }
+}
 </style>
-
