@@ -7,8 +7,20 @@
       </div>
       <div class="about__description">
         {{ fields.aboutMe }}
+
+        <p>Entre em contato</p>
+        <div class="about__contacts">
+          <a
+            href="https://www.linkedin.com/in/thais-martins-1b4692190/"
+            target="_blank"
+          >
+            <Icon type="linkedin" />
+          </a>
+          <a href="https://github.com/thaismtss" target="_blank">
+            <Icon type="github" />
+          </a>
+        </div>
       </div>
-      <div class="about__background"></div>
     </div>
   </div>
 </template>
@@ -33,7 +45,7 @@ const fields = entry.fields
   align-items: center;
   flex-wrap: wrap;
   width: 80vw;
-  margin: 3em auto;
+  margin: 1.5em auto;
 
   &__image {
     display: flex;
@@ -64,12 +76,21 @@ const fields = entry.fields
     position: absolute;
     right: 40px;
     top: 600px;
-    overflow: hidden;
     height: 8em;
     width: 8em;
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url('~/assets/vector-one.png');
+  }
+
+  &__contacts {
+    display: flex;
+    width: 6em;
+    justify-content: space-between;
+
+    @include for-phone-only {
+      margin: 0 auto;
+    }
   }
 }
 </style>
