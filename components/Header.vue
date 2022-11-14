@@ -4,6 +4,7 @@
       Olá! Eu sou <span class="header__name">Thais Martins</span> e sou
       Desenvolvedora Frontend
     </h1>
+    <div class="header__background"></div>
   </div>
 </template>
 
@@ -26,6 +27,24 @@
 
   @include for-phone-only {
     background-image: url('~/assets/background-mobile.png');
+  }
+
+  &__background {
+    position: absolute;
+    right: 40px;
+    top: 80px;
+    height: 15em;
+    width: 20em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('~/assets/vector-header.png');
+
+    @include for-phone-only {
+      right: 10px;
+      top: 180px;
+      height: 10em;
+      width: 10em;
+    }
   }
 
   &__content {
