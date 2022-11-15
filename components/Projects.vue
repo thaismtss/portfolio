@@ -4,9 +4,9 @@
       <h1>Projetos</h1>
       <div class="projects__container">
         <GSCarousel
-          :items="items"
-          item-gap="18"
-          :items-to-show="2"
+          :items="projects"
+          item-gap="16"
+          :items-to-show="itemsToShow"
           :layout="GSLayoutDefault"
           :layout-props="{
             disableArrows: false,
@@ -29,9 +29,12 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref, computed } from 'vue'
 import { GSCarousel, GSLayoutDefault } from 'gitart-scroll-carousel'
 
-const items = [
+const width = ref(0)
+
+const projects = [
   {
     name: 'CuideSe',
     description:
@@ -53,6 +56,21 @@ const items = [
       'consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue',
   },
 ]
+
+onMounted(() => {
+  if (process.client) {
+    window.addEventListener('resize', handleResize)
+    handleResize()
+  }
+})
+
+const itemsToShow = computed(() => {
+  return width.value <= 600 ? 1 : 4
+})
+
+const handleResize = () => {
+  width.value = window.innerWidth
+}
 </script>
 
 <style lang="scss">
@@ -104,8 +122,8 @@ const items = [
   padding: 1em;
 
   @include for-phone-only {
-    height: 20em;
-    width: 9em;
+    height: 15em;
+    width: 12em;
   }
 }
 </style>
