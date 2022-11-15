@@ -22,7 +22,7 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           additionalData:
-            '@import "@/assets/styles/_variables.scss"; @import "@/assets/styles/_mixin.scss";',
+            '@import "@/assets/styles/_variables.scss"; @import "@/assets/styles/_mixin.scss"; @import "gitart-scroll-carousel/dist/index.css"; @import "gitart-scroll-carousel/dist/GSArrow.css";',
         },
       },
     },
