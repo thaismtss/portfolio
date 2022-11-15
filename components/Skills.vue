@@ -4,7 +4,12 @@
       <div class="work__container__skills">
         <h1 class="work__container__title">Skills &lt; &frasl; &gt;</h1>
         <div class="work__container__skills__icons">
-          <Icon v-for="(icon, i) in items" :key="i" :icon="icon.fields.icon" />
+          <Icon
+            v-for="(icon, i) in items"
+            :key="i"
+            :icon="icon.fields.icon"
+            :label="icon.fields.label"
+          />
         </div>
       </div>
       <div>
