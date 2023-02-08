@@ -5,7 +5,7 @@
         <h1 class="work__container__title">Skills &lt; &frasl; &gt;</h1>
         <div class="work__container__skills__icons">
           <Icon
-            v-for="(icon, i) in items"
+            v-for="(icon, i) in itemsSkills"
             :key="i"
             :icon="icon.fields.icon"
             :label="icon.fields.label"
@@ -15,9 +15,13 @@
       <div>
         <h1 class="work__container__title">Experiência</h1>
         <div class="work__container__experience">
-          <WorkExperience />
-          <WorkExperience />
-          <WorkExperience />
+          <WorkExperience
+            v-for="(field, i) in itemsWorkExperience"
+            :key="i"
+            :year="field.fields.year"
+            :title="field.fields.title"
+            :description="field.fields.description"
+          />
         </div>
       </div>
     </div>
@@ -25,14 +29,25 @@
 </template>
 
 <script setup lang="ts">
-const { data } = await useAsyncData('skills', async (nuxtApp) => {
-  const { $client } = nuxtApp
-  return await $client.getEntries({
+import { IWorkExperienceFields, ISkillsFields } from '~~/types'
+
+const skills = await useAsyncData('skills', async () => {
+  const { $client } = useNuxtApp()
+  return await $client.getEntries<ISkillsFields>({
     content_type: 'skills',
   })
 })
 
-const items = data.value.items
+const workExperience = await useAsyncData('workExperience', async () => {
+  const { $client } = useNuxtApp()
+  return await $client.getEntries<IWorkExperienceFields>({
+    content_type: 'workExperience',
+    order: '-fields.year',
+  })
+})
+
+const itemsSkills = skills?.data?.value?.items
+const itemsWorkExperience = workExperience?.data?.value?.items
 </script>
 
 <style lang="scss">

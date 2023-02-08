@@ -17,7 +17,7 @@
             <Icon type="linkedin" />
           </a>
           <a href="https://github.com/thaismtss" target="_blank">
-            <Icon type="github" />
+            <Icon type="square-github" />
           </a>
         </div>
       </div>
@@ -26,14 +26,16 @@
 </template>
 
 <script setup lang="ts">
-const { data } = await useAsyncData('aboutMe', async (nuxtApp) => {
-  const { $client } = nuxtApp
-  return await $client.getEntries({
+import { IAboutFields } from '~~/types'
+
+const aboutMe = await useAsyncData('aboutMe', async () => {
+  const { $client } = useNuxtApp()
+  return await $client.getEntries<IAboutFields>({
     content_type: 'portfolio',
   })
 })
 
-const items = data.value.items
+const items = aboutMe?.data?.value?.items || []
 const entry = items[0]
 const fields = entry.fields
 </script>

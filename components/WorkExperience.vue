@@ -1,19 +1,29 @@
 <template>
   <div class="experience">
-    <div class="experience__year">2022</div>
+    <div class="experience__year">{{ year }}</div>
     <div class="experience__content">
-      <span class="experience__content__title">Estágiaria Frontend</span>
-      <span class="experience__content__description"
-        >Desenvolvimento FrontEnd no time de integração da Linx Impulse.
-        Responsável por implementar soluções focadas em empresas de varejo, como
-        melhorias de produtos internos, tratamento de dados e implementações em
-        sites de e-commerce.
-      </span>
+      <span class="experience__content__title">{{ title }}</span>
+      <span class="experience__content__description">{{ description }} </span>
     </div>
   </div>
 </template>
 
-<script></script>
+<script setup lang="ts">
+defineProps({
+  year: {
+    type: String,
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+})
+</script>
 
 <style lang="scss">
 .experience {
