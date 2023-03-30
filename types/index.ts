@@ -16,5 +16,10 @@ export interface ISkillsFields {
 }
 
 export interface IProjectsFields {
+  title: EntryFields.Text
+  description: EntryFields.Text
+  demo: EntryFields.Text
+  techs: EntryFields.Text[]
+  repository: EntryFields.Text
   images: Asset[]
 }

@@ -31,6 +31,7 @@
   "dependencies": {
     "contentful": "^9.2.5",
     "gitart-scroll-carousel": "^1.2.4",
-    "vue-dompurify-html": "^3.1.1"
+    "vue-dompurify-html": "^3.1.1",
+    "vue3-carousel": "^0.2.14"
   }
 }

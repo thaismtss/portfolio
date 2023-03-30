@@ -8,7 +8,7 @@
       <div class="about__description">
         {{ fields.aboutMe }}
 
-        <p>Entre em contato</p>
+        <p>Minhas redes</p>
         <div class="about__contacts">
           <a
             href="https://www.linkedin.com/in/thais-martins-1b4692190/"

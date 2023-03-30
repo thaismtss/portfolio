@@ -29,6 +29,7 @@ defineProps({
 .experience {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   margin-bottom: 3em;
 
   &__year {
