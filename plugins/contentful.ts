@@ -4,9 +4,9 @@
 import { createClient } from 'contentful'
 
 // for SSR, SSG
-import contentful from 'contentful'
+import * as contentful from 'contentful'
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig()
   const createClientFunc =
     process.env.NODE_ENV === 'development'
@@ -17,5 +17,10 @@ export default defineNuxtPlugin((nuxtApp) => {
     space: config.CTF_SPACE_ID,
     accessToken: config.CTF_CDA_ACCESS_TOKEN,
   })
-  nuxtApp.provide('client', client)
+
+  return {
+    provide: {
+      client,
+    },
+  }
 })

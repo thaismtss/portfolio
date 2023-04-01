@@ -3,6 +3,8 @@
     <Header />
     <AboutMe />
     <Skills />
+    <Projects />
+    <Footer />
   </div>
 </template>
 

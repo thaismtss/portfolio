@@ -1,15 +1,5 @@
 {
-  "eslint.validate": [
-    "vue",
-    "javascript",
-    "javascriptreact"
-  ],
   "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
     },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnPaste": false,
-  "editor.formatOnType": false,
-  "editor.formatOnSave": false,
-  "files.eol": "\n"
 }
