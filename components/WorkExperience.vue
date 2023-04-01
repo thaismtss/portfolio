@@ -48,6 +48,7 @@ defineProps({
     flex-direction: column;
     text-align: left;
     width: 29em;
+    white-space: pre-wrap;
 
     @include for-phone-only {
       width: 18em;
